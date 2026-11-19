@@ -37,14 +37,9 @@ export function SurpriseCard({
   const [isAdvancing, setIsAdvancing] = useState(false);
   const advanceTimerRef = useRef<number | null>(null);
 
-  const [customUrl, setCustomUrl] = useState<string>(() => {
-    try {
-      const saved = window.localStorage.getItem(STORAGE_KEY);
-      return saved && saved.trim() ? saved.trim() : SURPRISE_WEBSITE_URL;
-    } catch {
-      return SURPRISE_WEBSITE_URL;
-    }
-  });
+  // Always start with the configured destination so stale browser storage
+  // from an older version cannot override the final Surprise button link.
+  const [customUrl, setCustomUrl] = useState<string>(SURPRISE_WEBSITE_URL);
   const [isConfigOpen, setIsConfigOpen] = useState(false);
   const [urlDraft, setUrlDraft] = useState(customUrl === 'https://example.com' ? '' : customUrl);
   const [urlError, setUrlError] = useState<string | null>(null);
