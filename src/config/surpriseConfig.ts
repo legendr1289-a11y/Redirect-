@@ -7,7 +7,8 @@ export interface QuizOption {
   feedback: string;
 }
 
-export const SURPRISE_WEBSITE_URL = 'https://example.com';
+export const SURPRISE_WEBSITE_URL =
+  'https://6afe40c9696d1261e1bc3093--my-love-krutika-lkzo.netlify.app';
 
 export const BACKDROP_IMAGE_PATH =
   '/src/assets/images/romantic_peony_backdrop_1795032096860.jpg';
